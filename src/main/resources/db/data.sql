@@ -8,8 +8,8 @@ INSERT INTO board_tb(title, user_id, created_at) VALUES('3번째 게시글입니
 INSERT INTO board_tb(title, user_id, created_at) VALUES('4번째 게시글입니다.', 1, now());
 INSERT INTO board_tb(title, user_id, created_at) VALUES('5번째 게시글입니다.', 1, now());
 
-INSERT INTO board_tb(title, user_id, created_at) VALUES('1번째 게시글입니다.', 2, now());
-INSERT INTO board_tb(title, user_id, created_at) VALUES('2번째 게시글입니다.', 2, now());
-INSERT INTO board_tb(title, user_id, created_at) VALUES('3번째 게시글입니다.', 2, now());
-INSERT INTO board_tb(title, user_id, created_at) VALUES('4번째 게시글입니다.', 2, now());
-INSERT INTO board_tb(title, user_id, created_at) VALUES('5번째 게시글입니다.', 2, now());
+INSERT INTO board_tb(title, user_id, created_at) VALUES('6번째 게시글입니다.', 2, now());
+INSERT INTO board_tb(title, user_id, created_at) VALUES('7번째 게시글입니다.', 2, now());
+INSERT INTO board_tb(title, user_id, created_at) VALUES('8번째 게시글입니다.', 2, now());
+INSERT INTO board_tb(title, user_id, created_at) VALUES('9번째 게시글입니다.', 2, now());
+INSERT INTO board_tb(title, user_id, created_at) VALUES('10번째 게시글입니다.', 2, now());

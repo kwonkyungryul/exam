@@ -9,6 +9,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Index Page</h1>
+    <h1>Login Page</h1>
+    <hr/>
+    <form action="/login" method="post">
+        <input type="text" name="username" id="" placeholder="사용자 이름을 입력하세요"><br/>
+        <input type="password" name="password" id="" placeholder="비밀번호를 입력하세요"><br/>
+        <input type="submit" value="로그인">
+    </form>
 </body>
 </html>
