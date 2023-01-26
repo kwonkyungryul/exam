@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+.container {
+    width: 1800px;
+    margin: 30px auto 0 auto;
+    
+}
+
+.flex_box {
+    display: flex;
+    justify-content: center;
+}
+
+.t_center {
+    text-align: center;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+th, td{
+    padding: 5px;
+}
+
+.head_box a {
+    color: rgba(0, 0, 0, .7);
+}
+
+.title {
+    font-size: 80px;
+}

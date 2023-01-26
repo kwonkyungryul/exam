@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../layout/header.jsp" %>
     <div class="flex_box">
-        <h1>Board List</h1>
+        <h1 class="title">Board List</h1>
     </div>
     <hr/>
     <div class="flex_box">
@@ -15,7 +15,7 @@
                 <c:forEach items="${boardList}" var="board">
                 <tr>
                     <td>${board.id}</td>
-                    <td><a href="/board/${board.id}/detail">${board.title}</a></td>
+                    <td><strong><a href="/board/${board.id}/detail">${board.title}</a></strong></td>
                     <td>${board.createdAt}</td>
                 </tr>
                 </c:forEach>

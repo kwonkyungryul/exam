@@ -30,7 +30,7 @@ public class BoardController {
     public String list(Model model) {
         User principal = (User) session.getAttribute("principal");
         if (principal == null) {
-            return "redirect:/notfound";
+            return "redirect:/loginForm";
         }
 
         List<Board> boardList = boardRepository.findById(principal.getId());

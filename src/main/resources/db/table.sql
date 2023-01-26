@@ -12,4 +12,4 @@ CREATE TABLE board_tb(
     user_id int not null,
     created_at timestamp,
     constraint fk_user foreign key (user_id) references user_tb (id)
-)
+);
