@@ -54,7 +54,7 @@ public class UserController {
 
         session.setAttribute("principal", principal);
 
-        return "board/list";
+        return "redirect:/";
     }
 
     @GetMapping("/logout")

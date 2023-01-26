@@ -12,4 +12,8 @@
     <select id="findByUsernameAndPwd" resultType="shop.mtcoding.exam.model.User">
         SELECT * FROM user_tb WHERE username = #{username} and password = #{password}
     </select>
+
+    <select id="findById" resultType="shop.mtcoding.exam.model.User">
+        SELECT * FROM user_tb WHERE id = #{id}
+    </select>
 </mapper>
