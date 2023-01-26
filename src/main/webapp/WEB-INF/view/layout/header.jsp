@@ -25,11 +25,24 @@
 <body>
     <div class="flex_box t_center">
         <ul class="flex_box">
+        <c:choose>
+           <c:when test="${principal == null}">
             <li>
                 <a href="/loginForm">로그인</a>&nbsp;
             </li>
             <li>
                 <a href="/joinForm">회원가입</a>
             </li>
+           </c:when>
+        
+           <c:otherwise>
+            <li>
+                <a href="/user/userInfo">회원정보</a>&nbsp;
+            </li>
+            <li>
+                <a href="/logout">로그아웃</a>
+            </li>
+           </c:otherwise>
+        </c:choose>
         </ul>
     </div>
