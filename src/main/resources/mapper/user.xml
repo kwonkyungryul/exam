@@ -9,4 +9,7 @@
         INSERT INTO user_tb(username, password, email, created_at) VALUES(#{username}, #{password}, #{email}, now())
     </insert>
 
+    <select id="findByUsernameAndPwd" resultType="shop.mtcoding.exam.model.User">
+        SELECT * FROM user_tb WHERE username = #{username} and password = #{password}
+    </select>
 </mapper>

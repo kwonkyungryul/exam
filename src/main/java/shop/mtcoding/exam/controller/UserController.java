@@ -1,16 +1,23 @@
 package shop.mtcoding.exam.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import shop.mtcoding.exam.model.User;
 import shop.mtcoding.exam.model.UserRepository;
 
 @Controller
 public class UserController {
+
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
+    HttpSession session;
 
     @GetMapping("/joinForm")
     public String joinForm() {
@@ -36,5 +43,17 @@ public class UserController {
     @GetMapping("/loginForm")
     public String loginForm() {
         return "user/loginForm";
+    }
+
+    @PostMapping("/login")
+    public String login(String username, String password) {
+        User principal =  userRepository.findByUsernameAndPwd(username, password);
+        if (principal == null) {
+            return "redirect:/notfound";
+        }
+
+        session.setAttribute("principal", principal);
+
+        return "board/list";
     }
 }
