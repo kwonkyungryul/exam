@@ -10,4 +10,6 @@ public interface UserRepository {
     public User findByUsernameAndPwd(@Param("username") String username, @Param("password") String password);
 
     public User findById(int id);
+
+    public int updateById(@Param("id") int id, @Param("username") String username, @Param("password") String password, @Param("email") String email);
 }

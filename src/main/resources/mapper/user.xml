@@ -16,4 +16,8 @@
     <select id="findById" resultType="shop.mtcoding.exam.model.User">
         SELECT * FROM user_tb WHERE id = #{id}
     </select>
+
+    <update id="updateById">
+        UPDATE user_tb SET username = #{username}, password = #{password}, email = #{email} WHERE id = #{id}
+    </update>
 </mapper>

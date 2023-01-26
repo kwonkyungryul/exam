@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -61,5 +62,46 @@ public class UserController {
     public String logout() {
         session.invalidate();
         return "redirect:/loginForm";
+    }
+
+    @GetMapping("/user/userInfo")
+    public String userInfo(Model model) {
+        User principal = (User) session.getAttribute("principal");
+        if (principal == null) {
+            return "redirect:/notfound";
+        }
+
+        User user = userRepository.findById(principal.getId());
+        if (user == null) {
+            return "redirect:/notfound";
+        }
+
+        model.addAttribute("user", user);
+        
+        return "user/userInfo";
+    }
+
+    @PostMapping("/user/update")
+    public String updateById(int id, String username, String password, String email) {
+        User principal = (User) session.getAttribute("principal");
+        if (principal == null) {
+            return "redirect:/notfound";
+        }
+
+        User user =  userRepository.findById(id);
+        if (user == null) {
+            return "redirect:/notfound";
+        }
+
+        if (user.getId() != principal.getId()) {
+            return "redirect:/notfound";
+        }
+
+        int result = userRepository.updateById(id, username, password, email);
+        if (result != 1) {
+            return "redirect:/notfound";
+        }
+
+        return "redirect:/";
     }
 }
